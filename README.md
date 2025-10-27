@@ -17,7 +17,7 @@ They do **not** define how validation, payment, or consensus occurs.
 ---
 
 ## Repository Layout
-
+```
 mandate-specs/
 ├─ README.md
 ├─ CONTRIBUTING.md
@@ -33,7 +33,7 @@ mandate-specs/
    │  └─ (future primitive folders, e.g., swap@1/, bridge@1/, tokenDataCheck@1 etc.)
    └─ examples/
       └─ (json instances that combine core + a primitive’s payload)
-
+```
 ---
 
 ## Key Concepts
