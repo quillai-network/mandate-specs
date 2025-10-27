@@ -1,0 +1,87 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://quillai-network.github.io/mandate-specs/spec/core/mandate.schema.json",
+    "title": "Mandate",
+    "description": "Immutable mandate document. `intent` is descriptive text from the client; `core` is free-form. Two detached signatures attest to the canonicalized document.",
+    "type": "object",
+  
+    "properties": {
+      "mandateId": {
+        "type": "string",
+        "description": "Unique identifier (ULID or UUIDv7)."
+      },
+      "version": {
+        "type": "string",
+        "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+        "description": "Schema version (semver)."
+      },
+      "client": {
+        "type": "string",
+        "description": "CAIP-10 identifier of the issuer (e.g., eip155:1:0x...)."
+      },
+      "server": {
+        "type": "string",
+        "description": "CAIP-10 identifier of the executor (e.g., eip155:1:0x...)."
+      },
+      "createdAt": {
+        "type": "string",
+        "format": "date-time",
+        "description": "ISO 8601 creation timestamp."
+      },
+      "deadline": {
+        "type": "string",
+        "format": "date-time",
+        "description": "ISO 8601 mandate expiry for fulfillment."
+      },
+      "intent": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 2000,
+        "description": "Descriptive or non-descriptive text from the client explaining the purpose/context of the mandate."
+      },
+      "core": {
+        "type": "object",
+        "description": "Free-form task body; validated by external primitive schemas.",
+        "additionalProperties": true
+      },
+      "signatures": {
+        "type": "object",
+        "description": "Detached signatures from client and server over the canonicalized mandate (excluding this `signatures` field).",
+        "properties": {
+          "clientSig": { "$ref": "#/$defs/Signature" },
+          "serverSig": { "$ref": "#/$defs/Signature" }
+        },
+        "required": ["clientSig", "serverSig"],
+        "additionalProperties": false
+      }
+    },
+  
+    "required": ["mandateId", "version", "client", "server", "createdAt", "deadline", "intent", "core", "signatures"],
+    "additionalProperties": false,
+  
+    "$defs": {
+      "Signature": {
+        "type": "object",
+        "properties": {
+          "alg": {
+            "type": "string",
+            "enum": ["eip712", "eip191"],
+            "description": "Signature algorithm."
+          },
+          "mandateHash": {
+            "type": "string",
+            "pattern": "^0x[0-9a-fA-F]{64}$",
+            "description": "keccak256(JCS-canonicalized mandate JSON excluding `signatures`)."
+          },
+          "signature": {
+            "type": "string",
+            "pattern": "^0x[0-9a-fA-F]+$",
+            "description": "Hex-encoded signature (e.g., 65-byte r||s||v ECDSA)."
+          }
+        },
+        "required": ["alg", "mandateHash", "signature"],
+        "additionalProperties": false
+      }
+    }
+  }
+  
