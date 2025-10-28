@@ -47,24 +47,24 @@ mandate-specs/
 ### Example (minimal)
 ```json
 {
-  "mandateId": "01J9X9A3T3DMD3M3CYAJW1Y0SZ",
+  "mandateId": "01K8N3AB6J9FD3RVAQQ4YSQMK3",
   "version": "0.1.0",
-  "client": "eip155:1:0xCLIENT00000000000000000000000000000000001",
-  "server": "eip155:1:0xSERVER00000000000000000000000000000000002",
-  "createdAt": "2025-10-23T10:00:00Z",
-  "deadline": "2025-10-23T10:20:00Z",
+  "client": "eip155:1:0x5f451c9210A670681aA299Fdd0E64dBFA068D33b",
+  "server": "eip155:1:0x0867CBE40D362F347842Fbb40acd47F04F0fe49a",
+  "createdAt": "2025-10-28T09:45:19.314Z",
+  "deadline": "2025-10-28T10:05:19.315Z",
   "intent": "Create a mandate describing the terms of a deal.",
   "core": {},
   "signatures": {
     "clientSig": {
-      "alg": "eip712",
-      "mandateHash": "0x0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
-      "signature": "0xaaaaa..."
+      "alg": "eip191",
+      "mandateHash": "0xa963cdc8d7269be6c8ff352b2348451fb73d4224cf88fa28288529e45b52687b",
+      "signature": "0x47be2a932cfa8eb45cbf2b458603063345ca27c0c9c8f30c21a99d1610d6cb8b5f231deb28d6b1273c7d1d1fb1f5a24fca55f5c0244a9ce78315ed79d6047e3f1b"
     },
     "serverSig": {
-      "alg": "eip712",
-      "mandateHash": "0x0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
-      "signature": "0xbbbb..."
+      "alg": "eip191",
+      "mandateHash": "0xa963cdc8d7269be6c8ff352b2348451fb73d4224cf88fa28288529e45b52687b",
+      "signature": "0x9f30b87e54472f789d709923328c7f51af264e8cc4c8fc393f75a8c70b7b50db302ef4b97638af5c5d5d7ff9a802e216a34f9dfec6cb8139635dbbfb745a51bf1b"
     }
   }
 }
