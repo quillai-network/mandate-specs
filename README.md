@@ -77,7 +77,7 @@ mandate-specs/
 
 The canonical base schema lives at:
 
-``` https://quillai-network.github.io/mandate-specs/spec/core/mandate.schema.json ```
+``` /mandate-specs/spec/core/mandate.schema.json ```
 
 
 and references the official JSON Schema dialect:
