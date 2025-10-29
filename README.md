@@ -103,10 +103,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 Each schema follows semantic versioning (MAJOR.MINOR.PATCH).
 Published versions are tagged and served under versioned paths on GitHub Pages.
-See VERSIONING.md
- for details.
+See VERSIONING.md for details.
 
 ## License
 
-Released under the MIT License
-.
+Released under the MIT License.
