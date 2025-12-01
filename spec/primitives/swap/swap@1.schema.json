@@ -1,0 +1,28 @@
+{
+    "kind": "swap@1",
+    "version": 1,
+    "description": "Chain-agnostic token swap primitive.",
+    "payloadSchema": {
+      "type": "object",
+      "required": [
+        "chainId",
+        "tokenIn",
+        "tokenOut",
+        "amountIn",
+        "minOut",
+        "recipient",
+        "deadline"
+      ],
+      "properties": {
+        "chainId": { "type": "integer" },
+        "tokenIn": { "type": "string" },
+        "tokenOut": { "type": "string" },
+        "amountIn": { "type": "string" },
+        "minOut": { "type": "string" },
+        "recipient": { "type": "string" },
+        "deadline": { "type": "string", "format": "date-time" }
+      },
+      "additionalProperties": false
+    }
+  }
+  
