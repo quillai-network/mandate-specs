@@ -1,0 +1,13 @@
+{
+    "specVersion": "0.1.0",
+    "primitives": [
+      {
+        "kind": "swap@1",
+        "name": "swap",
+        "version": 1,
+        "schemaPath": "primitives/swap/swap@1.schema.json",
+        "description": "Chain-agnostic token swap primitive."
+      }
+    ]
+  }
+  
